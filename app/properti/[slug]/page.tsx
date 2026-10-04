@@ -266,7 +266,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<P
             </section>
           )}
 
-                    {/* Denah unit — disembunyikan otomatis bila tak ada data terbit */}
+          {/* Denah unit — disembunyikan otomatis bila tak ada data terbit */}
           <PropertySiteplan propertySlug={property.slug} />
 
           {/* Atribusi */}

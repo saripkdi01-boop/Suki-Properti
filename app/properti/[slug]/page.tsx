@@ -6,6 +6,7 @@ import KprSimulator from "@/components/detail/KprSimulator";
 import ContactCard from "@/components/detail/ContactCard";
 import PropertyCard from "@/components/PropertyCard";
 import PropertyMapDynamic from "@/components/PropertyMapDynamic";
+import PropertySiteplan from "@/components/detail/PropertySiteplan";
 import { BRAND, ATTRIBUTION_TEXT } from "@/lib/brand";
 import { getPropertyBySlug, getRelated } from "@/lib/properties";
 import { parseDescription } from "@/lib/parse";
@@ -264,6 +265,9 @@ export default async function PropertyDetailPage({ params }: { params: Promise<P
               )}
             </section>
           )}
+
+                    {/* Denah unit — disembunyikan otomatis bila tak ada data terbit */}
+          <PropertySiteplan propertySlug={property.slug} />
 
           {/* Atribusi */}
           <section aria-label="Atribusi data" className="rounded-2xl border border-stone-200 bg-stone-50 p-4">

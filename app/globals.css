@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Laguna — teal khas Sultra Properti */
+  --color-laguna-50: #effaf6;
+  --color-laguna-100: #d7f0e8;
+  --color-laguna-200: #b0e1d1;
+  --color-laguna-300: #7dccb6;
+  --color-laguna-400: #47b198;
+  --color-laguna-500: #23967e;
+  --color-laguna-600: #147a66;
+  --color-laguna-700: #116355;
+  --color-laguna-800: #105146;
+  --color-laguna-900: #0e443c;
+  --color-laguna-950: #072723;
+
+  /* Emas — aksen */
+  --color-gold-300: #f2d878;
+  --color-gold-400: #e9c44c;
+  --color-gold-500: #d9a92b;
+  --color-gold-600: #b98620;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-stone-50 text-stone-900 antialiased;
+}
+
+/* Pin harga ala Zillow pada peta Leaflet */
+.sp-price-pin-wrap {
+  background: transparent;
+  border: none;
+}
+.sp-price-pin {
+  background: #ffffff;
+  border: 2px solid #147a66;
+  color: #0e443c;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(7, 39, 35, 0.25);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.sp-price-pin:hover {
+  background: #147a66;
+  color: #ffffff;
+  transform: translate(-50%, -50%) scale(1.08);
+  z-index: 1000;
+}
+.sp-price-pin.no-price {
+  border-style: dashed;
+  font-weight: 600;
+}
+
+/* Popup Leaflet — samakan dengan bahasa desain */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  font-family: var(--font-sans);
+}
+.leaflet-popup-content {
+  margin: 10px 12px;
+  line-height: 1.4;
+}
+.sp-popup-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #0e443c;
+  display: block;
+  margin-bottom: 2px;
+}
+.sp-popup-price {
+  font-weight: 800;
+  color: #147a66;
+  font-size: 14px;
+}
+
+/* Skeleton shimmer untuk loading state */
+@keyframes sp-shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.sp-skeleton {
+  background: linear-gradient(90deg, #e7e5e4 25%, #f5f5f4 50%, #e7e5e4 75%);
+  background-size: 800px 100%;
+  animation: sp-shimmer 1.4s ease infinite;
+}
